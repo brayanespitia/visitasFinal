@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div th:replace="menu :: menu"></div>
+	<h5>
+		Bienvenido <span th:text="${#authentication.name}"></span>
+	</h5>
+	<a th:href="@{/inicio}" class="btn btn-outline-light" role="button">Ir
+		al inicio</a>
+</body>
+
+</html>

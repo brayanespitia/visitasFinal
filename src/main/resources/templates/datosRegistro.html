@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div th:replace="menu :: menu"></div>
+	<div id="datos">
+		<form th:action="@{/guardar-registro}" method="post">
+			<div>
+				<label>Presenta alguno de los siguientes sintomas</label> 
+				<br>
+				<input id ="ch" type="checkbox" name="tos" value="tos"> <label>Tos
+					seca </label> 
+					<br> <input id ="ch" type="checkbox" name="melestar"
+					value="malestar"> <label>Malestar general </label>
+					<br><input id ="ch" type="checkbox" name="fatiga" value="fatiga"> <label> Fatiga
+					vacular </label> 
+					<br> <input id ="ch" type="checkbox" name="secrecion"
+					value="secrecion"> <label>Secreción nasal </label> 
+					<br><input id ="ch" type="checkbox" name="garganta" value="garganta"> <label> Dolor
+					de garganta </label> 
+					<br> <input  id ="ch"type="checkbox" name="respirar"
+					value="respirar"> <label>Dificultad para respirar </label>
+				
+				
+			</div>
+			<div>
+				<label>Temperatura</label> <input type="number" class="form-control"
+					required />
+			</div>
+			<div align="center">
+				<input type="submit" value="Generar"
+					class="btn btn-primary btn-xs dt-edit">
+			</div>
+<input type="hidden" name="idbas" th:value="*{idb}" >
+		</form>
+	</div>
+</body>
+
+</html>

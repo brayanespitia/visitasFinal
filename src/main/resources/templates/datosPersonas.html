@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div th:replace="menu :: menu"></div>
+	<div id="datos">
+		<form th:action="@{/guardar-persona}" method="post">
+			<div>
+				<h4>Vive con personas con alguna de estas caracteristicas.</h4>
+				<br> <input type="checkbox" name="60" value="60"> <label>Mayores
+					de 60 años</label> <br> <input type="checkbox" name="15" value="15"> <label>Menores
+					de 15 años</label> <br> <input type="checkbox" name="salud"
+					value="salud"> <label>Del sector de la salud</label>
+			</div>
+			<div>
+				<label>Contactar en caso de emergencia a:</label>
+			</div>
+			<div>
+				<label>Nombre del contacto</label> <input type="text"
+					name="contacto" class="form-control" required />
+
+			</div>
+			<div>
+				<label>Telefono de contacto</label> <input type="number"
+					name="telefono2" class="form-control" required />
+
+			</div>
+
+			<div align="center">
+				<input type="submit" value="Cormobilidades"
+					class="btn btn-primary btn-xs dt-edit">
+			</div>
+			
+			<input type="hidden" name="idbas" th:value="*{idb}" >
+
+		</form>
+	</div>
+</body>
+
+</html>

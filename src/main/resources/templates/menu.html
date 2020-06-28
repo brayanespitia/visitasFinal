@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+<title th:text="${titulo}"></title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans"
+	rel="stylesheet">
+<!-- Bootstrap CSS CDN -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Our Custom CSS -->
+<link rel="stylesheet" href="../css/estilo.css">
+<script type="text/javascript" src="js/llqrcode.js"></script>
+
+<script type="text/javascript" src="js/webqr.js"></script>
+</head>
+<body>
+	<div th:fragment="menu" id="content">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+
+					<ul class="nav navbar-nav navbar-right" id="sesion">						
+						<li><a th:href="@{/lecturaIngreso}" class="btn btn-outline ">Lectura ingreso</a></li>
+						<li><a th:href="@{/RegistroVisitante}" class="btn btn-outline ">Registro visitantes</a></li>
+						<li><a th:href="@{/registro-personas}" class="btn btn-outline ">Registro comunidad</a></li>
+						<li sec:authorize="isAuthenticated()" class="dropdown show">
+							<a class="btn btn-outline dropdown-toggle "
+							data-toggle="dropdown"><span sec:authentication="name"></span></a>
+							<div class="dropdown-content">
+								<form th:action="@{/logout}" method="post">
+									<button type="submit">Sign Out</button>
+								</form>
+							</div>
+
+
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>		
+</body>
+
+<footer th:fragment="footer" id="footer">
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!-- Bootstrap Js CDN -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</footer>
+</html>

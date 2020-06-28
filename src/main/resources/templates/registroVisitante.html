@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div th:replace="menu :: menu"></div>
+	<div id="datos">
+		<form th:action="@{/buscarVisitante}" method="post">
+			<div>
+				<label>bucar por documento</label> <input type="text" name="documento"
+					class="form-control" required />
+					<input type="submit" value="buscar"><label th:text="${respuesta}"></label>
+			</div>
+		</form>
+
+		<form th:action="@{/registrar-visitante}" 
+			method="post">
+			<div>
+				<label>Documento</label> <input type="text" 
+					name="doc" class="form-control" required />
+			</div>
+			<div>
+				<label>Nombres</label> <input type="text" 
+					name="nombre"	class="form-control" required />
+			</div>
+			<div>
+				<label>Fecha de nacimiento</label> <input
+					type="date" name="fechanacimiento"
+					class="form-control" required />
+
+			</div>
+			<div>
+				<label>Eps</label><select name="eps">
+					<optgroup label="selecione su eps">
+						<option value="0">No tiene</option>
+						<option th:each="eps: ${epss}" th:value="${eps.id}"
+							th:text="${eps.descripcion}" th:object="${eps}"></option>
+					</optgroup>
+				</select>
+			</div>
+			<div>
+				<label>Genero</label><select name="genero">
+					<optgroup label="selecione su genero">						
+						<option  value="m">Masculino</option>
+						<option value="n">Femenino</option>
+					</optgroup>
+				</select>
+			</div>
+			<div></div>
+			<div>
+				<label>Temperatura</label> <input type="number" name="temperatura" class="form-control"
+					min="16" max="50" step=".01" required />
+					
+			</div>
+			
+
+			<div align="center">
+				<input type="submit" value="Registrar"
+					class="btn btn-primary btn-xs dt-edit">
+			</div>
+
+		</form>
+	</div>
+</body>
+
+</html>

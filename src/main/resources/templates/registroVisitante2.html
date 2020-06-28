@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div th:replace="menu :: menu"></div>
+	<div id="datos">
+		<form th:action="@{/buscarVisitante}" method="post">
+			<div>
+				<label>bucar por documento</label> <input type="text" name="documento"
+					class="form-control" required />
+					<input type="submit" value="buscar"><label th:text="${respuesta}"></label>
+			</div>
+		</form>
+
+		<form th:action="@{/registrar-visitante}" th:object="${visitante}"
+			method="post">
+			<div>
+				<label>Documento</label> <input type="text" th:field="*{documento}"
+					name="doc" class="form-control" required />
+			</div>
+			<div>
+				<label>Nombres</label> <input type="text" th:field="*{nombre}"
+					name="nombre"	class="form-control" required />
+			</div>
+			<div>
+				<label>Fecha de nacimiento</label> <input type="date"
+					th:if="*{fechanacimiento!=null}" th:text="*{fechanacimiento}"
+					name="fechainicio" class="form-control" required /> <input
+					type="date" th:if="*{fechanacimiento==null}" name="fechanacimiento"
+					class="form-control" required />
+
+			</div>
+			<div>
+				<label>Eps</label><select name="eps">
+					<optgroup label="selecione su eps">
+						<option th:if="${eps!=null}" th:text="${eps.descripcion}"
+							th:value="${eps}"></option>
+						<option th:each="eps: ${epss}" th:value="${eps}"
+							th:text="${eps.descripcion}" th:object="${eps}"></option>
+					</optgroup>
+				</select>
+			</div>
+			<div>
+				<label>Genero</label><select name="genero">
+					<optgroup label="selecione su genero">
+						<option th:if="${genero!=null}" th:text="${genero}"
+							th:value="${genero}"></option>
+						<option th:unless="${genero==f}" text="Femenino"
+							th:value="${genero}"></option>
+						<option th:if="${genero==f}" value="m">Masculino</option>
+						<option th:if="${genero==m}" value="n">Femenino</option>
+					</optgroup>
+				</select>
+			</div>
+			<div></div>
+			<div>
+				<label>Temperatura</label> <input type="number" name="temperatura" class="form-control"
+					required />
+			</div>		
+
+		</form>
+	</div>
+</body>
+
+</html>

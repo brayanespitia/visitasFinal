@@ -1,0 +1,201 @@
+@import
+	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+#login{
+	background: #ffffffe6;
+	text-align: center;	
+	border: solid;
+	border-color: white;
+	grid-area: login;
+	justify-self: center;
+	align-self: flex-end;
+	box-shadow: 3px 10px 10px 5px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 50%; /* Buscamos el centro horizontal (relativo) del navegador */
+	left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
+	width: 30%; /* Definimos el ancho del objeto a centrar */
+	height: 450px; /* Definimos el alto del objeto a centrar */
+	margin-top: -200px;
+	/* Restamos la mitad de la altura del objeto con un margin-top */
+	margin-left: -215px;
+	/* Restamos la mitad de la anchura del objeto con un margin-left */
+}
+
+#login div{
+	padding-top: 10px;
+}
+
+
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background: #fafafa;
+}
+
+p {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.1em;
+	font-weight: 300;
+	line-height: 1.7em;
+	color: #999;
+}
+
+a, a:hover, a:focus {
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+.navbar {
+	padding: 15px 10px;
+	background: #D90606;
+	border: none;
+	border-radius: 0;
+	margin-bottom: 40px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+	box-shadow: none;
+	outline: none !important;
+	border: none;
+}
+
+.line {
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px dashed #ddd;
+	margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+	padding: 20px;
+	min-height: 100vh;
+	transition: all 0.3s;
+	width: 100%;	
+}
+
+#bs-example-navbar-collapse-1 {
+	background: #0000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #D90606;  
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#divLogin {
+	background: #ffffffe6;
+	text-align: center;	
+	border: solid;
+	border-color: white;
+	grid-area: login;
+	justify-self: center;
+	align-self: center;
+	box-shadow: 3px 10px 10px 5px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 50%; /* Buscamos el centro horizontal (relativo) del navegador */
+	left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
+	width: 30%; /* Definimos el ancho del objeto a centrar */
+	height: 450px; /* Definimos el alto del objeto a centrar */
+	margin-top: -200px;
+	/* Restamos la mitad de la altura del objeto con un margin-top */
+	margin-left: -215px;
+	/* Restamos la mitad de la anchura del objeto con un margin-left */
+}
+
+
+
+
+#content h2{
+	 font-family: 'Montserrat';
+    font-weight: bolder;    
+    align-content: center; 
+}
+
+#content select{
+	text-indent:8px;
+	 font-family: 'Montserrat';
+    font-weight: bolder;   
+	color:black;	
+	width: 100%;
+}
+
+
+#content a{
+	color: white;
+}
+
+
+#footer {
+	position: fixed;
+	bottom: 0px;
+	height: 4%;
+	width: 100%; 
+	background: white;	
+	bottom: 0; 
+    color: white;
+}
+
+#datos{
+	padding-left:25%;
+	width: 75%;	
+}
+
+#datos div{
+	padding: 5px;
+}
+#ch {
+	 width: 15px;
+    height: 15px;
+  
+}
+
+#la{
+	width: 70%;
+	height:15px;	
+	padding-top: 20px;
+}
+
+#mainbody{
+    background: white;
+    width:100%;
+	display:none;
+}
+
+#v{
+    width:320px;
+    height:240px;
+}
+#qr-canvas{
+    display:none;
+}
+
+#outdiv
+{
+    width:320px;
+    height:240px;
+	
+}
+#result{
+    border: solid;
+	border-width: 1px 1px 1px 1px;
+	padding:20px;
+	width:70%;
+}
+

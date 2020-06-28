@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="login :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div id="login" class="form-group">
+		<h2 th:text="${titulo}"></h2>
+		<form th:action="@{/registrarUsuario}" method="post">
+		<div>
+			<label>Empresa</label> <input type="text" name="empresa"
+				id="empresa" class="form-control"
+				placeholder="Empresa a la que pertenese" autofocus required />
+
+		</div>
+		<div>
+			<label>Usuario</label> <input type="text" name="usuario"
+				id="usuario" class="form-control"
+				placeholder="ingrese nombre de usuario" required />
+		</div>
+		<div>
+			<label>Email</label> <input type="email" name="email" id="email"
+				class="form-control" placeholder="ingrese su dirección de correo electronico"
+				required />
+		</div>
+		<div>
+			<input type="submit" value="Registrarme" class="btn btn-primary" />
+		</div>
+		</form>
+		<div>
+			<a th:href="@{/}">Iniciar sessión</a>
+		</div>
+		<div>
+			<h3 th:text="${respuesta}"></h3>
+		</div>
+	</div>
+
+</body>
+</html>

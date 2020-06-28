@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div th:replace="menu :: menu"></div>
+	<div id="datos">
+		<form th:action="@{/guardar-cormobilidades}" method="post">
+			<div>
+				<h4>Presenta alguna de las siguientes enfermedades</h4> <br>
+				 <input id="ch" type="checkbox" name="diabetes"
+					value="diabetes"> <label>Diabetes</label>
+					<br>  <input id="ch" type="checkbox" name="cardioV"
+					value="cardiov"> <label>Enfermedad
+					CardioVascular</label>
+					<br>  <input id ="ch" type="checkbox" name="accidente" value="accidente"> <label>Accidente cerebro
+					vacular</label>
+				    <br><input id ="ch" type="checkbox" name="vih"
+					value="vih">  <label>VIH</label>
+					<br> <input id ="ch"
+					type="checkbox" name="cancer" value="cancer"> <label>Cancer</label>
+					<br> <input id ="ch" type="checkbox" name="corticoides"
+					value="corticoides"> <label>Uso
+					de corticoides</label>
+					<br> <input id ="ch" type="checkbox" name="obstructiva"
+					value="obstructiva"> <label>Emfermedad
+					Obstructiva cronica</label>
+					<br> <input  id ="ch" type="checkbox" name="nutricion"
+					value="nutricions"> <label>Mal nutrición
+					(obecidad o desnutrición)</label>
+					<br> <input id ="ch"
+					type="checkbox" name="fuma" value="fuma"> <label>Fumadores</label>
+			</div>
+			<div align="center">
+				<input type="submit" value="Registro"
+					class="btn btn-primary btn-xs dt-edit">
+			</div>
+<input type="hidden" name="idbas" th:value="*{idb}" >
+		</form>
+	</div>
+</body>
+
+</html>

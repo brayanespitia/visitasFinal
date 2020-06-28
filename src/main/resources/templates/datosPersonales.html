@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu :: head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+</head>
+<body>
+	<div th:replace="menu :: menu"></div>
+	<div id="datos">
+	
+	<form th:action="@{/buscaPersona}" method="post">
+			<div>
+				<label>bucar por documento</label> <input type="text" name="documento"
+					class="form-control" required />
+					<input type="submit" value="Registrar"><label th:text="${respuesta}"></label>
+			</div>
+		</form>
+	<form th:action="@{/guardar-datos}" method="post">
+		<div>
+		<h4>Datos personales</h4>
+		</div>
+		<div>
+			<label>Documento</label> <input type="text" name="docu" class="form-control"
+				required />
+		</div>
+		<div>
+			<label>Nombres</label> <input type="text" name="nombre" class="form-control"
+				required />
+		</div>
+		<div >
+			<label>Fecha de nacimiento</label> <input type="date"
+				name="fechanacimiento" class="form-control" required />
+
+		</div>
+		<div >
+			<label>Numero de telefono</label> <input type="number"
+				name="telefono" class="form-control" required />
+
+		</div>
+		<div>
+			<label>Tipo de persona</label><select name="tipo">
+						<optgroup label="selecione su eps">
+							<option th:each="tipo: ${tipos}"
+								th:value="${tipo.id}" th:text="${tipo.descripcion}"
+								th:object="${tipo}"></option>
+						</optgroup>
+				</select>
+		</div>
+		<div>
+			<label>Eps</label><select name="eps">
+						<optgroup label="selecione su eps">
+							<option th:each="eps: ${epss}"
+								th:value="${eps.id}" th:text="${eps.descripcion}"
+								th:object="${esp}"></option>
+						</optgroup>
+				</select>
+		</div>
+		<div>
+			<label>Genero</label><select name="genero">
+						<optgroup label="selecione su eps">
+							<option value="m">Masculino</option>
+							<option value="n">Femenino</option>
+						</optgroup>
+				</select>
+		</div>
+		<input type="checkbox" id="ch"
+			name="embarazada"  value="embarazada">	<label>Embarazada </label> 	
+		<div>
+			<label>Modalidad</label><select name="mod">
+						<optgroup label="selecione su modalidad escolar">
+							<option th:each="modalidad: ${modalidades}"
+								th:value="${modalidad.id}" th:text="${modalidad.descripcion}"
+								th:object="${modalidad}"></option>
+						</optgroup>
+				</select>
+		</div>
+
+		<div align="center">
+			<input type="submit" value="Personas"
+				class="btn btn-primary btn-xs dt-edit">
+		</div>
+
+	</form>
+	</div>
+</body>
+
+</html>

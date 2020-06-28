@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="menu::head">
+<meta http-equiv=”Content-Type” content=”text/html; charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="QR Code scanner">
+<meta name="keywords"
+	content="qrcode,qr code,scanner,barcode,javascript">
+<meta name="language" content="English">
+<meta name="copyright" content="Lazar Laszlo (c) 2011">
+<meta name="Revisit-After" content="1 Days">
+<meta name="robots" content="index, follow">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+	<div th:replace="menu::menu"></div>
+
+
+
+	<div id="datos">
+
+		<div>
+			<form name="leeqr" th:action="@{/buscaPersona}" method="post">
+				<input name="documento" id="doc" type="text">
+			</form>
+		</div>
+		<div id="outdiv">
+			<video id="v" autoplay=""></video>
+		</div>
+
+		<canvas id="qr-canvas" width="800" height="600"
+			style="width: 800px; height: 600px;"></canvas>
+		<script type="text/javascript">
+			load();
+		</script>
+
+
+
+		<div>
+
+
+			<form th:action="@{/buscaPersona}" method="post">
+				<input type="text" name="documento"> <input type="submit"
+					value="buscar" class="btn">
+			</form>
+			<h2 th:text="${respuesta}"></h2>
+		</div>
+	</div>
+
+
+
+
+</body>
+<footer> </footer>
+
+</html>
